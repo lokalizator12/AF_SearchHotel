@@ -13,18 +13,19 @@ namespace AF_SearchHotel
     public partial class Form1 : Form
 
         
-    {
+    { public List<Registred> list = new List<Registred>();
         
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        protected void button1_Click(object sender, EventArgs e)
         {
-            Registred profileForm = new Registred(GetText("login"), GetText("pass"));
-            profileForm.AddProfile(profileForm);
-            MessageBox.Show("Succesfull");
+            Registred profileForm = new Registred(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, Convert.ToString(maskedTextBox1.Text), Convert.ToInt32(textBox5.Text));
+            list.Add(profileForm);
+           // MainForm mainForm = new MainForm();
+           // mainForm.ShowDialog();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -32,17 +33,28 @@ namespace AF_SearchHotel
 
         }
 
-        public string GetText(string LogOrPass)
+        
+        private void button2_Click(object sender, EventArgs e)
         {
-            switch (LogOrPass)
-            {
-                case "login": return textBox1.Text;
-                    
-                case "pass": return textBox2.Text;
-                    
-            }
-            return "if not found";
-            
+            Registred anonimProfile = new Registred();
+            list.Add(anonimProfile);
+            Form mainForm = new MainForm();
+           // mainForm.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            label7.Text = DateTime.Now.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            list[list.Count - 1].printInfo(); 
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

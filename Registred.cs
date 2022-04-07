@@ -7,48 +7,70 @@ using System.Windows.Forms;
 
 namespace AF_SearchHotel
 {
-     internal class Registred : Form1
+     public class Registred 
     {
-        private List<Registred> profiles = new List<Registred>();
+        
+        private string firstName, lastName, city, country, numberPh;
+        private double haveMoney;
+        private int year;
 
-        private string login, pass;
+        public string GetFirstName()
+        {
+            return firstName;
+        }
+        public string GetLastName()
+        {
+            return lastName;
+        }
+        public string GetCity() { return city; }
+        public string GetCountry() { return country; }
+        public string GetNumberPh() { return numberPh; }
+        public int GetDateBirthday() { return year; }
 
+
+        //anonim constructor create
         public Registred()
         {
-            this.login = "null";
-            this.pass = "null";
+            this.firstName = "person";
+            this.lastName = "person";
+            this.city = "PC";
+            this.country = "Mars";
+            this.numberPh = "777777777";
+            this.year = 99;
+        }
+        //create constructor static profile 
+        public Registred(string firstName, string lastName, string city, string country, string numberPh, int year)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.city = city;
+            this.country = country;
+            this.numberPh = numberPh;
+            this.year = year;
+
         }
 
-        public void AddProfile(Registred newProf)
+        //create destructor
+         ~Registred()
         {
-            profiles.Add(newProf);
+            MessageBox.Show("Likwidacja obiektu klas.");
         }
-        public Registred(string login, string pass)
+        // copy-constructor
+        public Registred(Registred profileCopy)
         {
-            this.login=login;
-            this.pass=pass;
-        }
-
-        public void SetLogin(string login)
-        {
-            this.login = login;
-        }
-
-        private void SetPass(string pass)
-        {
-            this.pass = pass;
-        }
-        
-       
-        public void PrintProfile()
-        {
-            MessageBox.Show(login + "\n" + pass);
+            this.firstName = profileCopy.firstName;
+            this.lastName = profileCopy.lastName;
+            this.city = profileCopy.city;
+            this.country = profileCopy.country;
+            this.year = profileCopy.year;
+            this.numberPh = profileCopy.numberPh;
         }
 
-        public void Registration()
+        public virtual void printInfo()
         {
-            SetLogin(GetText("login"));
-            SetPass(GetText("pass"));
-        }
+            MessageBox.Show("Name: " + firstName + " " + lastName + "\n location: " + country + 
+                ", " + city + "\n Phone: " + numberPh + "\n Year: " + year);
+        } 
+
     }
 }
