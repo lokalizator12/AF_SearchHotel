@@ -9,7 +9,8 @@ namespace AF_SearchHotel
 {
      public class Registred 
     {
-        
+        // NO READ !!!
+        // THIS 5-6 LISTA
         private string firstName, lastName, city, country, numberPh;
         private double haveMoney;
         private int year;

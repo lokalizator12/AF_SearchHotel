@@ -40,14 +40,32 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxDay = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.textBoxCountry = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxCenaOd = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxPerson = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxVIP = new System.Windows.Forms.TextBox();
+            this.textBoxCenaDo = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.buttonKemper = new System.Windows.Forms.Button();
+            this.buttonHotel = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button1
@@ -132,10 +150,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(393, 215);
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(727, 405);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 74);
+            this.button2.Size = new System.Drawing.Size(98, 23);
             this.button2.TabIndex = 9;
             this.button2.Text = "Anonim";
             this.button2.UseVisualStyleBackColor = false;
@@ -159,15 +177,6 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Year";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(535, 418);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "label7";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -178,16 +187,6 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Find a Hotel";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(285, 234);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 46);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "or";
             // 
             // button3
             // 
@@ -234,17 +233,212 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Year";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(635, 334);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 13);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Hotel/Kemper ?";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(635, 151);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 13);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Count day";
+            // 
+            // textBoxDay
+            // 
+            this.textBoxDay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxDay.Location = new System.Drawing.Point(726, 151);
+            this.textBoxDay.Name = "textBoxDay";
+            this.textBoxDay.Size = new System.Drawing.Size(35, 20);
+            this.textBoxDay.TabIndex = 27;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(635, 119);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(24, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "City";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(635, 95);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Country";
+            // 
+            // textBoxCity
+            // 
+            this.textBoxCity.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxCity.Location = new System.Drawing.Point(726, 116);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCity.TabIndex = 24;
+            // 
+            // textBoxCountry
+            // 
+            this.textBoxCountry.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBoxCountry.Location = new System.Drawing.Point(725, 88);
+            this.textBoxCountry.Name = "textBoxCountry";
+            this.textBoxCountry.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCountry.TabIndex = 23;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(635, 190);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Cena od:";
+            // 
+            // textBoxCenaOd
+            // 
+            this.textBoxCenaOd.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxCenaOd.Location = new System.Drawing.Point(725, 187);
+            this.textBoxCenaOd.Name = "textBoxCenaOd";
+            this.textBoxCenaOd.Size = new System.Drawing.Size(54, 20);
+            this.textBoxCenaOd.TabIndex = 37;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(634, 303);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 13);
+            this.label16.TabIndex = 36;
+            this.label16.Text = "Count person";
+            // 
+            // textBoxPerson
+            // 
+            this.textBoxPerson.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxPerson.Location = new System.Drawing.Point(725, 303);
+            this.textBoxPerson.Name = "textBoxPerson";
+            this.textBoxPerson.Size = new System.Drawing.Size(34, 20);
+            this.textBoxPerson.TabIndex = 35;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(629, 246);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(91, 39);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "typ pokoju \r\nilośc gwiazd (1-5)\r\n1 = basic, 5 = VIP\r\n";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(635, 218);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(47, 13);
+            this.label18.TabIndex = 33;
+            this.label18.Text = "Cena do";
+            // 
+            // textBoxVIP
+            // 
+            this.textBoxVIP.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxVIP.Location = new System.Drawing.Point(727, 261);
+            this.textBoxVIP.Name = "textBoxVIP";
+            this.textBoxVIP.Size = new System.Drawing.Size(34, 20);
+            this.textBoxVIP.TabIndex = 32;
+            // 
+            // textBoxCenaDo
+            // 
+            this.textBoxCenaDo.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBoxCenaDo.Location = new System.Drawing.Point(725, 211);
+            this.textBoxCenaDo.Name = "textBoxCenaDo";
+            this.textBoxCenaDo.Size = new System.Drawing.Size(54, 20);
+            this.textBoxCenaDo.TabIndex = 31;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(638, 376);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 39;
+            this.button4.Text = "Check info";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // buttonKemper
+            // 
+            this.buttonKemper.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonKemper.Location = new System.Drawing.Point(723, 334);
+            this.buttonKemper.Name = "buttonKemper";
+            this.buttonKemper.Size = new System.Drawing.Size(77, 34);
+            this.buttonKemper.TabIndex = 40;
+            this.buttonKemper.Text = "Kemper";
+            this.buttonKemper.UseVisualStyleBackColor = false;
+            this.buttonKemper.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // buttonHotel
+            // 
+            this.buttonHotel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonHotel.Location = new System.Drawing.Point(806, 334);
+            this.buttonHotel.Name = "buttonHotel";
+            this.buttonHotel.Size = new System.Drawing.Size(77, 34);
+            this.buttonHotel.TabIndex = 41;
+            this.buttonHotel.Text = "Hotel";
+            this.buttonHotel.UseVisualStyleBackColor = false;
+            this.buttonHotel.Click += new System.EventHandler(this.buttonHotel_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(421, 467);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "label7";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(348, 162);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(213, 225);
+            this.listBox1.TabIndex = 42;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(593, 452);
+            this.ClientSize = new System.Drawing.Size(888, 506);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.buttonHotel);
+            this.Controls.Add(this.buttonKemper);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.textBoxCenaOd);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.textBoxPerson);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.textBoxVIP);
+            this.Controls.Add(this.textBoxCenaDo);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxDay);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBoxCity);
+            this.Controls.Add(this.textBoxCountry);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -283,14 +477,32 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxDay;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.TextBox textBoxCountry;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxCenaOd;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxPerson;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBoxVIP;
+        private System.Windows.Forms.TextBox textBoxCenaDo;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonKemper;
+        private System.Windows.Forms.Button buttonHotel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
