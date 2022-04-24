@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
 {
-    public abstract class Searchin
+    
+    public class Searchin
     {
-        protected string country, city, kemperOrHotel, cena;
-        protected double moneyOf, moneyIn;
-        protected int countDay = 0, countPerson = 0, countStarType = 0;
-        bool onlinePayment;
+        public List<Searchin> list1 = new List<Searchin>();
 
-        public string GetKemperOrString()
+        protected string country, city, camperOrHotel;
+        protected double moneyOf, moneyIn, price;
+        protected int countDay = 0, countPerson = 0, countStarType = 0;
+         bool onlinePayment;
+
+
+        
+        public string GetCamperOrString()
         {
-            return kemperOrHotel;
+            return camperOrHotel;
         }
         //constructor does not arguments
         public Searchin()
@@ -25,14 +26,14 @@ namespace AF_SearchHotel
             city = "Lego-city";
             countDay = 777;
             moneyOf = 777.777f;
-            kemperOrHotel = "Not kemper and not hotel, i want live in street";
             moneyIn = 7777.7777f;
-            cena = moneyOf.ToString() + " - " + moneyIn.ToString();
+            price = totalPrice(moneyIn, moneyOf);
             countPerson = 10;
             countStarType = 5;
             onlinePayment = false;
         }
 
+        
         //constructor with all arguments
         public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment)
         {
@@ -43,7 +44,7 @@ namespace AF_SearchHotel
             this.countDay = countDay;
             this.countPerson = countPerson;
             this.countStarType = countStarType;
-            cena = moneyOf.ToString() + " - " + moneyIn.ToString();
+            this.price = totalPrice(moneyOf, moneyIn);
             this.onlinePayment = onlinePayment;
 
         }
@@ -59,11 +60,11 @@ namespace AF_SearchHotel
         {
             country = search.country;
             city = search.city;
-            kemperOrHotel = search.kemperOrHotel;
+            camperOrHotel = search.camperOrHotel;
             moneyOf = search.moneyOf;
             moneyIn = search.moneyIn;
             countDay = search.countDay;
-            cena = search.moneyOf.ToString() + " - " + search.moneyIn.ToString();
+            price = totalPrice(search.moneyOf, search.moneyIn);
             countPerson = search.countPerson;
             countStarType = search.countStarType;
             onlinePayment = search.onlinePayment;
@@ -71,18 +72,21 @@ namespace AF_SearchHotel
 
         public virtual void Write(ListBox resList)
         {
-            resList.Items.Add("Type: " + kemperOrHotel);
             resList.Items.Add("Country: " + country);
             resList.Items.Add("City: " + city);
             resList.Items.Add("Count person: " + countPerson.ToString());
             resList.Items.Add("Count day: " + countDay.ToString());
-            resList.Items.Add("Cena: " + cena.ToString());
+            resList.Items.Add("Price: " + price.ToString());
             IsOnlinePayment(resList);
 
         }
 
+        protected double totalPrice(double moneyOf, double moneyIn)
+        {
+            return moneyOf + moneyIn;
+        }
 
-        private void IsOnlinePayment(ListBox resList)
+        protected void IsOnlinePayment(ListBox resList)
         {
             if (onlinePayment)
             {
