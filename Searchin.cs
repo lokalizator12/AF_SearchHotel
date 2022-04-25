@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
@@ -8,10 +10,12 @@ namespace AF_SearchHotel
     {
         public List<Searchin> list1 = new List<Searchin>();
 
-        protected string country, city, camperOrHotel;
-        protected double moneyOf, moneyIn, price;
+        protected string country, city, camperOrHotel, price;
+        protected double moneyOf, moneyIn;
         protected int countDay = 0, countPerson = 0, countStarType = 0;
-         bool onlinePayment;
+        bool onlinePayment;
+        protected DateTime dateOf, dateIn;
+        Bitmap jmage;
 
 
         
@@ -31,12 +35,17 @@ namespace AF_SearchHotel
             countPerson = 10;
             countStarType = 5;
             onlinePayment = false;
+            dateOf = DateTime.Now;
+            dateIn = DateTime.Now;
+
         }
 
         
         //constructor with all arguments
-        public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment)
+        public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment, DateTime dateOf, DateTime dateIn)
         {
+            this.dateOf = dateOf;
+            this.dateIn = dateIn;
             this.country = country;
             this.city = city;
             this.moneyOf = moneyOf;
@@ -68,6 +77,8 @@ namespace AF_SearchHotel
             countPerson = search.countPerson;
             countStarType = search.countStarType;
             onlinePayment = search.onlinePayment;
+            dateOf = search.dateOf;
+            dateIn = search.dateIn;
         }
 
         public virtual void Write(ListBox resList)
@@ -77,13 +88,15 @@ namespace AF_SearchHotel
             resList.Items.Add("Count person: " + countPerson.ToString());
             resList.Items.Add("Count day: " + countDay.ToString());
             resList.Items.Add("Price: " + price.ToString());
+            resList.Items.Add("Period: "  + dateOf.ToString()+ " - "+ dateIn.ToString());
             IsOnlinePayment(resList);
-
         }
 
-        protected double totalPrice(double moneyOf, double moneyIn)
+
+
+        protected String totalPrice(double moneyOf, double moneyIn)
         {
-            return moneyOf + moneyIn;
+            return Convert.ToString(moneyOf) + " - " + Convert.ToString(moneyIn);
         }
 
         protected void IsOnlinePayment(ListBox resList)

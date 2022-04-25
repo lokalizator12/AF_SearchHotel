@@ -13,7 +13,6 @@ namespace AF_SearchHotel
     public partial class Form1 : Form
     {
         public List<Searchin> list1 = new List<Searchin>();
-
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +40,6 @@ namespace AF_SearchHotel
             
         }
 
-        
+       
     }
 }

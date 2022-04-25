@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
@@ -17,39 +12,44 @@ namespace AF_SearchHotel
             InitializeComponent();
         }
 
-        List <Camper> campers = new List<Camper>();
+        List<Camper> campers = new List<Camper>();
+        Camper camper;
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                if (maskedTextBox1.Text == null && numericUpDown1.Value == null)
-                {
-                    Camper camperAnonim = new Camper();
-                    campers.Add(camperAnonim);
-                }
-                else
-                {
-                    Camper camper = new Camper(Convert.ToChar(maskedTextBox1.Text), Convert.ToInt16(numericUpDown1.Value), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked);
-                    campers.Add(camper);
-                }
-            }catch (Exception ex)
+                camper = new Camper(textBox1.Text, textBox2.Text, Convert.ToDouble(numericUpDown6.Value), Convert.ToDouble(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value),
+                    Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value), checkBox4.Checked, Convert.ToChar(maskedTextBox1.Text), Convert.ToInt16(numericUpDown1.Value), 
+                    checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, dateTimePicker1.Value, dateTimePicker2.Value);
+                campers.Add(camper);
+                
+                button5.Enabled = true;
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            cleaning();
-           
         }
 
         private void cleaning()
         {
             maskedTextBox1 = null;
-            numericUpDown1 = null;
+            textBox2.Clear();
+            textBox1.Clear();
+            numericUpDown1.Value = 0;
+            numericUpDown2.Value = 0;
+            numericUpDown3.Value = 0;
+            numericUpDown4.Value = 0;
+            numericUpDown5.Value = 0;
+            numericUpDown6.Value = 0;
             checkBox1.Checked = false;
             checkBox2.Checked = false;
             checkBox3.Checked = false;
+            checkBox4.Checked = false;
             listBox1.Items.Clear();
+            campers[campers.Count - 1] = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,9 +59,11 @@ namespace AF_SearchHotel
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (campers.Count > 0) {
+            if (campers.Count > 0)
+            {
                 campers[campers.Count - 1].Write(listBox1);
-        } }
+            }
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -69,7 +71,12 @@ namespace AF_SearchHotel
             {
                 campers[campers.Count - 1].infoTypeCamper();
             }
-            else { MessageBox.Show("Please enter type in text box (A,B,C or D)"); }
+            else
+            {
+                MessageBox.Show("Please fill in the fields and click \"Search\"");
+            }
+
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -78,10 +85,25 @@ namespace AF_SearchHotel
             {
                 campers[campers.Count - 1].recommendationsForTypeCamper();
             }
-            catch (Exception d) {
+            catch (Exception d)
+            {
                 MessageBox.Show("Please fill in the fields and click \"Search\"");
             }
-            
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap bitmap = new Bitmap(openFileDialog1.FileName);
+                pictureBox1.Image = bitmap;
+            }
         }
     }
 }
