@@ -63,6 +63,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -412,9 +413,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(243, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 72);
+            this.pictureBox1.Size = new System.Drawing.Size(10, 10);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
@@ -446,9 +447,9 @@
             this.button6.Location = new System.Drawing.Point(6, 87);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(81, 26);
+            this.button6.Size = new System.Drawing.Size(85, 41);
             this.button6.TabIndex = 49;
-            this.button6.Text = "load picture";
+            this.button6.Text = "choose background";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -456,12 +457,23 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(310, 564);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(39, 25);
+            this.button7.TabIndex = 50;
+            this.button7.Text = "full";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form3Camper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(355, 822);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -549,5 +561,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button7;
     }
 }

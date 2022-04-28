@@ -25,15 +25,15 @@ namespace AF_SearchHotel
         }
 
         //constructor with all arguments
-        public Camper(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment, 
+        public Camper(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
             char typeCamper, int countSleepNumber, bool haveShower, bool haveKitchen, bool haveRoomForPersonCar, DateTime dateOf, DateTime dateIn)
-            : base( country,  city,  moneyOf,  moneyIn,  countDay,  countPerson,  countStarType,  onlinePayment,  dateOf,  dateIn)
+            : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateIn)
         {
             camperOrHotel = "Camper";
-            this.typeCamper= typeCamper;
+            this.typeCamper = typeCamper;
             this.countSleepNumber = countSleepNumber;
             this.haveShower = haveShower;
-            this.haveKitchen= haveKitchen;
+            this.haveKitchen = haveKitchen;
             this.haveRoomForPersonCar = haveRoomForPersonCar;
         }
 
@@ -68,19 +68,19 @@ namespace AF_SearchHotel
 
         public void recommendationsForTypeCamper()
         {
-            if (countSleepNumber <= 2 && !haveShower && !haveKitchen && !haveRoomForPersonCar )
+            if (countSleepNumber <= 2 && !haveShower && !haveKitchen && !haveRoomForPersonCar)
             {
                 MessageBox.Show("Recomended: type A (Small Camper)");
             }
-            else if (countSleepNumber <= 5 && !haveShower && !haveKitchen && !haveRoomForPersonCar )
+            else if (countSleepNumber <= 5 && !haveShower && !haveKitchen && !haveRoomForPersonCar)
             {
                 MessageBox.Show("Recomended: type B (Pop up)");
             }
-            else if (countSleepNumber <= 8 && !haveShower && haveKitchen && !haveRoomForPersonCar )
+            else if (countSleepNumber <= 8 && !haveShower && haveKitchen && !haveRoomForPersonCar)
             {
                 MessageBox.Show("Recomended: type C (Travel Trailer)");
             }
-            else if (countSleepNumber <= 8 && haveShower && haveKitchen && haveRoomForPersonCar )
+            else if (countSleepNumber <= 8 && haveShower && haveKitchen && haveRoomForPersonCar)
             {
                 MessageBox.Show("Recomended: type D (Toyhauler.)");
             }
@@ -89,23 +89,23 @@ namespace AF_SearchHotel
 
         public void infoTypeCamper()
         {
-                MessageBox.Show("Type A: Small Camper. " +
-                     "\nAll amenities and features have been designed to require as little space as possible," +
-                     "\nAll amenities and features have been designed to require as little space as possible," +
-                     "\n and allow the user to add or subtract different elements as they find their comfort level." +
-                     "\n_____________________________________________________________________________" +
-                     "\nType B: Pop Up.\nThese models are ideal for those new to RV camping, and families with young children." +
-                    "\nOffering both canvas tent and hard - top A - frame options, there is a right entry point for everyone." +
-                    "\n_____________________________________________________________________________" +
-                    "\nType C: Travel Trailer." +
-                    "\nThe Travel Trailer category offers a wide berth of options, including smooth - sided(laminates) and corrugated - sided(conventional)." +
-                    "\nThese trailers are known most for their slide-out feature, which expands the interior living space at the push of a button!" +
-                    "\n_____________________________________________________________________________" +
-                    "\nType D: Toyhauler." +
-                    "\nThese models offer wide availability, including everything from single-axle small travel trailer toy haulers, " +
-                    "\nall the way up to 40 + foot fifth wheel toy haulers." +
-                    "\nMake your selection based on use!");
-           
+            MessageBox.Show("Type A: Small Camper. " +
+                 "\nAll amenities and features have been designed to require as little space as possible," +
+                 "\nAll amenities and features have been designed to require as little space as possible," +
+                 "\n and allow the user to add or subtract different elements as they find their comfort level." +
+                 "\n_____________________________________________________________________________" +
+                 "\nType B: Pop Up.\nThese models are ideal for those new to RV camping, and families with young children." +
+                "\nOffering both canvas tent and hard - top A - frame options, there is a right entry point for everyone." +
+                "\n_____________________________________________________________________________" +
+                "\nType C: Travel Trailer." +
+                "\nThe Travel Trailer category offers a wide berth of options, including smooth - sided(laminates) and corrugated - sided(conventional)." +
+                "\nThese trailers are known most for their slide-out feature, which expands the interior living space at the push of a button!" +
+                "\n_____________________________________________________________________________" +
+                "\nType D: Toyhauler." +
+                "\nThese models offer wide availability, including everything from single-axle small travel trailer toy haulers, " +
+                "\nall the way up to 40 + foot fifth wheel toy haulers." +
+                "\nMake your selection based on use!");
+
         }
     }
 }

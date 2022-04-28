@@ -18,13 +18,21 @@ namespace AF_SearchHotel
 
 
 
-        List<String> listPerson = new List<String>();
-        public void addPersons(TextBox textbox)
+        public List<String> listPerson = new List<String>();
+        public void addPerson(string s)
         {
-            listPerson.Add(textbox.Text.ToString());
+            listPerson.Add(s);
         }
+        public void writePerson(ListBox reslist)
+        {
 
-       
+            if (listPerson.Count > 0)
+            {
+                reslist.Items.Add("List Person: ");
+                for (int i = 0; i < listPerson.Count; i++)
+                    reslist.Items.Add(listPerson[i]);
+            }
+        }
         // counstructor not arguments
         public Hotel() : base()
         {
@@ -42,7 +50,7 @@ namespace AF_SearchHotel
         //constructor with all arguments
         public Hotel(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
             int floor, int countRoom, double rate, bool haveBalcony, bool haveWiFi, bool freeBreakfast, bool parking, DateTime dateOf, DateTime dateIn)
-            : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateOf)
+            : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateIn)
         {
             camperOrHotel = "Hotel";
             this.floor = floor;
@@ -72,6 +80,11 @@ namespace AF_SearchHotel
             freeBreakfast = hotel.freeBreakfast;
             parking = hotel.parking;
         }
+        public void enterFull(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
+            int floor, int countRoom, double rate, bool haveBalcony, bool haveWiFi, bool freeBreakfast, bool parking, DateTime dateOf, DateTime dateIn)
+        {
+
+        }
 
         public override void Write(ListBox resListBox)
         {
@@ -83,28 +96,19 @@ namespace AF_SearchHotel
             resListBox.Items.Add("Balcon: " + haveBalcony);
             resListBox.Items.Add("Wi-Fi: " + haveWiFi);
             resListBox.Items.Add("Parking: " + parking);
-            if (listPerson != null)
-            {
-                resListBox.Items.Add("List persons: ");
-                for (int i = 0; i < listPerson.Count; i++)
-                {   string s = listPerson[i].ToString();
-                    resListBox.Items.Add(s);
-                }
-            }
-            
         }
 
         public void recommendationsForRoomBaseMoney()
         {
-                MessageBox.Show("If 0-100$: floor -- 10-12, 1 room, not have balcon, not have wi-fi and not have parking" +
-                    "\n_______________________________________________________________________________________" +
-                    "\nIf 100$ - 300$: floor -- 7-10, 1 room, not have balcon, have wi-fi and not have parking" +
-                    "\n______________________________________________________________________________________" +
-                    "\nIf 300$ - 500$: floor -- 5-7, 1-2 room, not have balcon, have wi-fi and not have parking" +
-                    "\n______________________________________________________________________________________" +
-                    "\nIf 500$ - 700$: floor -- 3-5, 1-2 room, not have balcon, have wi-fi and have parking" +
-                    "\n______________________________________________________________________________________" +
-                    "\nIf 700$ - 100000000$: floor -- 1-3, 1-3 room, have balcon, have wi-fi and have parking");
+            MessageBox.Show("If 0-100$: floor -- 10-12, 1 room, not have balcon, not have wi-fi and not have parking" +
+                "\n_______________________________________________________________________________________" +
+                "\nIf 100$ - 300$: floor -- 7-10, 1 room, not have balcon, have wi-fi and not have parking" +
+                "\n______________________________________________________________________________________" +
+                "\nIf 300$ - 500$: floor -- 5-7, 1-2 room, not have balcon, have wi-fi and not have parking" +
+                "\n______________________________________________________________________________________" +
+                "\nIf 500$ - 700$: floor -- 3-5, 1-2 room, not have balcon, have wi-fi and have parking" +
+                "\n______________________________________________________________________________________" +
+                "\nIf 700$ - 100000000$: floor -- 1-3, 1-3 room, have balcon, have wi-fi and have parking");
         }
 
         public void additionalServices()

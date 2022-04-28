@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace AF_SearchHotel
 {
-    
+
     public class Searchin
     {
         public List<Searchin> list1 = new List<Searchin>();
@@ -18,7 +18,7 @@ namespace AF_SearchHotel
         Bitmap jmage;
 
 
-        
+
         public string GetCamperOrString()
         {
             return camperOrHotel;
@@ -40,7 +40,7 @@ namespace AF_SearchHotel
 
         }
 
-        
+
         //constructor with all arguments
         public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment, DateTime dateOf, DateTime dateIn)
         {
@@ -88,7 +88,7 @@ namespace AF_SearchHotel
             resList.Items.Add("Count person: " + countPerson.ToString());
             resList.Items.Add("Count day: " + countDay.ToString());
             resList.Items.Add("Price: " + price.ToString());
-            resList.Items.Add("Period: "  + dateOf.ToString()+ " - "+ dateIn.ToString());
+            resList.Items.Add("Period: " + dateOf.ToString() + " - " + dateIn.ToString());
             IsOnlinePayment(resList);
         }
 

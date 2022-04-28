@@ -68,6 +68,9 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.buttonListPerson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -112,7 +115,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(249, 268);
+            this.checkBox1.Location = new System.Drawing.Point(304, 52);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(62, 20);
@@ -123,7 +126,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(249, 296);
+            this.checkBox2.Location = new System.Drawing.Point(304, 80);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(54, 20);
@@ -134,7 +137,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(249, 325);
+            this.checkBox3.Location = new System.Drawing.Point(304, 109);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(99, 20);
@@ -157,7 +160,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(249, 353);
+            this.checkBox4.Location = new System.Drawing.Point(304, 137);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(66, 20);
@@ -170,7 +173,7 @@
             this.listBox1.BackColor = System.Drawing.Color.MintCream;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(33, 540);
+            this.listBox1.Location = new System.Drawing.Point(354, 237);
             this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(330, 260);
@@ -179,7 +182,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Location = new System.Drawing.Point(4, 487);
+            this.button2.Location = new System.Drawing.Point(110, 487);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 43);
@@ -191,7 +194,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.MistyRose;
-            this.button3.Location = new System.Drawing.Point(308, 512);
+            this.button3.Location = new System.Drawing.Point(620, 505);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(70, 20);
@@ -289,6 +292,7 @@
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(61, 22);
             this.numericUpDown6.TabIndex = 37;
+            this.numericUpDown6.ValueChanged += new System.EventHandler(this.numericUpDown6_ValueChanged);
             // 
             // numericUpDown7
             // 
@@ -321,7 +325,7 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(249, 240);
+            this.checkBox5.Location = new System.Drawing.Point(304, 24);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(108, 20);
@@ -419,7 +423,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(326, 419);
+            this.button4.Location = new System.Drawing.Point(608, 167);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(70, 48);
@@ -431,7 +435,7 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(249, 375);
+            this.button5.Location = new System.Drawing.Point(226, 380);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(114, 31);
@@ -461,20 +465,20 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(283, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(665, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(31, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(4, 51);
+            this.button6.Location = new System.Drawing.Point(542, 51);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(83, 38);
+            this.button6.Size = new System.Drawing.Size(114, 44);
             this.button6.TabIndex = 45;
-            this.button6.Text = "load picture";
+            this.button6.Text = "Choose background";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -524,18 +528,56 @@
             this.label13.Text = "Name: *";
             this.label13.Visible = false;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(278, 217);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(36, 22);
+            this.button7.TabIndex = 50;
+            this.button7.Text = "add";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(13, 505);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(36, 22);
+            this.button8.TabIndex = 51;
+            this.button8.Text = "full";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // buttonListPerson
+            // 
+            this.buttonListPerson.BackColor = System.Drawing.Color.MistyRose;
+            this.buttonListPerson.Location = new System.Drawing.Point(491, 209);
+            this.buttonListPerson.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonListPerson.Name = "buttonListPerson";
+            this.buttonListPerson.Size = new System.Drawing.Size(70, 20);
+            this.buttonListPerson.TabIndex = 52;
+            this.buttonListPerson.Text = "list person";
+            this.buttonListPerson.UseVisualStyleBackColor = false;
+            this.buttonListPerson.Visible = false;
+            this.buttonListPerson.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form2Hotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(400, 811);
+            this.ClientSize = new System.Drawing.Size(697, 531);
+            this.Controls.Add(this.buttonListPerson);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button5);
@@ -569,6 +611,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2Hotel";
@@ -629,5 +672,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonListPerson;
     }
 }

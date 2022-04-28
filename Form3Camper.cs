@@ -20,10 +20,9 @@ namespace AF_SearchHotel
             try
             {
                 camper = new Camper(textBox1.Text, textBox2.Text, Convert.ToDouble(numericUpDown6.Value), Convert.ToDouble(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value),
-                    Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value), checkBox4.Checked, Convert.ToChar(maskedTextBox1.Text), Convert.ToInt16(numericUpDown1.Value), 
+                    Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value), checkBox4.Checked, Convert.ToChar(maskedTextBox1.Text), Convert.ToInt16(numericUpDown1.Value),
                     checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, dateTimePicker1.Value, dateTimePicker2.Value);
                 campers.Add(camper);
-                
                 button5.Enabled = true;
 
             }
@@ -38,6 +37,8 @@ namespace AF_SearchHotel
             maskedTextBox1 = null;
             textBox2.Clear();
             textBox1.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
             numericUpDown1.Value = 0;
             numericUpDown2.Value = 0;
             numericUpDown3.Value = 0;
@@ -49,7 +50,10 @@ namespace AF_SearchHotel
             checkBox3.Checked = false;
             checkBox4.Checked = false;
             listBox1.Items.Clear();
-            campers[campers.Count - 1] = null;
+            if (campers.Count > 0)
+            {
+                campers[campers.Count - 1] = null;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,16 +71,8 @@ namespace AF_SearchHotel
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (campers.Count > 0)
-            {
-                campers[campers.Count - 1].infoTypeCamper();
-            }
-            else
-            {
-                MessageBox.Show("Please fill in the fields and click \"Search\"");
-            }
-
-
+            camper = new Camper();
+            camper.infoTypeCamper();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -89,7 +85,6 @@ namespace AF_SearchHotel
             {
                 MessageBox.Show("Please fill in the fields and click \"Search\"");
             }
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -99,11 +94,32 @@ namespace AF_SearchHotel
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Bitmap bitmap = new Bitmap(openFileDialog1.FileName);
-                pictureBox1.Image = bitmap;
+                BackgroundImage = bitmap;
+                // pictureBox1.Image = bitmap;
             }
+        }
+        private void fullEnter()
+        {
+            textBox1.Text = "USA";
+            textBox2.Text = "New York";
+            dateTimePicker2.Value.AddDays(30);
+            numericUpDown4.Value = 2;
+            numericUpDown5.Value = 5;
+            numericUpDown6.Value = 100;
+            numericUpDown1.Value = 1;
+            numericUpDown2.Value = 2000;
+            numericUpDown3.Value = 5;
+            checkBox2.Checked = true;
+            checkBox1.Checked = true;
+            maskedTextBox1.Text = "A";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            fullEnter();
         }
     }
 }
