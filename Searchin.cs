@@ -37,12 +37,13 @@ namespace AF_SearchHotel
             onlinePayment = false;
             dateOf = DateTime.Now;
             dateIn = DateTime.Now;
+            
 
         }
 
 
         //constructor with all arguments
-        public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment, DateTime dateOf, DateTime dateIn)
+        public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment, DateTime dateOf, DateTime dateIn, Bitmap jmage)
         {
             this.dateOf = dateOf;
             this.dateIn = dateIn;
@@ -53,9 +54,9 @@ namespace AF_SearchHotel
             this.countDay = countDay;
             this.countPerson = countPerson;
             this.countStarType = countStarType;
-            this.price = totalPrice(moneyOf, moneyIn);
+            price = totalPrice(moneyOf, moneyIn);
             this.onlinePayment = onlinePayment;
-
+            this.jmage = jmage;
         }
 
         //distructor

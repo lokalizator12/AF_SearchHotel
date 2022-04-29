@@ -14,6 +14,7 @@ namespace AF_SearchHotel
 
         List<Camper> campers = new List<Camper>();
         Camper camper;
+        Bitmap bmp;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -21,7 +22,7 @@ namespace AF_SearchHotel
             {
                 camper = new Camper(textBox1.Text, textBox2.Text, Convert.ToDouble(numericUpDown6.Value), Convert.ToDouble(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value),
                     Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value), checkBox4.Checked, Convert.ToChar(maskedTextBox1.Text), Convert.ToInt16(numericUpDown1.Value),
-                    checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, dateTimePicker1.Value, dateTimePicker2.Value);
+                    checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, dateTimePicker1.Value, dateTimePicker2.Value, bmp);
                 campers.Add(camper);
                 button5.Enabled = true;
 
@@ -66,6 +67,8 @@ namespace AF_SearchHotel
             if (campers.Count > 0)
             {
                 campers[campers.Count - 1].Write(listBox1);
+                pictureBox1.Visible = true;
+                pictureBox1.Image = bmp;
             }
         }
 
@@ -98,7 +101,6 @@ namespace AF_SearchHotel
             {
                 Bitmap bitmap = new Bitmap(openFileDialog1.FileName);
                 BackgroundImage = bitmap;
-                // pictureBox1.Image = bitmap;
             }
         }
         private void fullEnter()
@@ -120,6 +122,15 @@ namespace AF_SearchHotel
         private void button7_Click(object sender, EventArgs e)
         {
             fullEnter();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                bmp = new Bitmap(openFileDialog1.FileName);
+            }
         }
     }
 }

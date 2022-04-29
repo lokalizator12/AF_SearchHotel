@@ -34,7 +34,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 56);
+            this.button1.Location = new System.Drawing.Point(98, 272);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 47);
             this.button1.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(272, 56);
+            this.button2.Location = new System.Drawing.Point(471, 272);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 47);
             this.button2.TabIndex = 1;
@@ -56,11 +56,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 156);
+            this.BackgroundImage = global::AF_SearchHotel.Properties.Resources.camping;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(690, 393);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }

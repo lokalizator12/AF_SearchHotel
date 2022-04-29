@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
@@ -26,8 +27,8 @@ namespace AF_SearchHotel
 
         //constructor with all arguments
         public Camper(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
-            char typeCamper, int countSleepNumber, bool haveShower, bool haveKitchen, bool haveRoomForPersonCar, DateTime dateOf, DateTime dateIn)
-            : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateIn)
+            char typeCamper, int countSleepNumber, bool haveShower, bool haveKitchen, bool haveRoomForPersonCar, DateTime dateOf, DateTime dateIn, Bitmap jmage )
+            : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateIn, jmage)
         {
             camperOrHotel = "Camper";
             this.typeCamper = typeCamper;

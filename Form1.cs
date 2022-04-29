@@ -40,6 +40,9 @@ namespace AF_SearchHotel
             
         }
 
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

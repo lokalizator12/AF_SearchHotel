@@ -71,6 +71,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.buttonListPerson = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -411,6 +412,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(142, 22);
             this.textBox1.TabIndex = 26;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -465,16 +467,17 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(665, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(476, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 23);
+            this.pictureBox1.Size = new System.Drawing.Size(208, 134);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(542, 51);
+            this.button6.Location = new System.Drawing.Point(402, 165);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(114, 44);
             this.button6.TabIndex = 45;
@@ -505,7 +508,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // textBox3
             // 
@@ -564,12 +566,23 @@
             this.buttonListPerson.Visible = false;
             this.buttonListPerson.Click += new System.EventHandler(this.button9_Click);
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(522, 181);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(79, 20);
+            this.button9.TabIndex = 53;
+            this.button9.Text = "load picture";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
+            // 
             // Form2Hotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(697, 531);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.buttonListPerson);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -615,6 +628,7 @@
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2Hotel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Search Hotel";
             this.Load += new System.EventHandler(this.Form2Hotel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -675,5 +689,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button buttonListPerson;
+        private System.Windows.Forms.Button button9;
     }
 }

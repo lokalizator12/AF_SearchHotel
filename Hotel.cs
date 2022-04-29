@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
@@ -15,6 +16,7 @@ namespace AF_SearchHotel
         private bool haveWiFi;
         private bool freeBreakfast;
         private readonly bool parking;
+        Bitmap jmage;
 
 
 
@@ -49,8 +51,8 @@ namespace AF_SearchHotel
 
         //constructor with all arguments
         public Hotel(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
-            int floor, int countRoom, double rate, bool haveBalcony, bool haveWiFi, bool freeBreakfast, bool parking, DateTime dateOf, DateTime dateIn)
-            : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateIn)
+            int floor, int countRoom, double rate, bool haveBalcony, bool haveWiFi, bool freeBreakfast, bool parking, DateTime dateOf, DateTime dateIn, Bitmap jmage)
+            : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateIn, jmage)
         {
             camperOrHotel = "Hotel";
             this.floor = floor;
@@ -80,11 +82,7 @@ namespace AF_SearchHotel
             freeBreakfast = hotel.freeBreakfast;
             parking = hotel.parking;
         }
-        public void enterFull(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
-            int floor, int countRoom, double rate, bool haveBalcony, bool haveWiFi, bool freeBreakfast, bool parking, DateTime dateOf, DateTime dateIn)
-        {
-
-        }
+        
 
         public override void Write(ListBox resListBox)
         {
