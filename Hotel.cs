@@ -21,11 +21,11 @@ namespace AF_SearchHotel
 
 
         public List<String> listPerson = new List<String>();
-        public void addPerson(string s)
+        public void AddPerson(string s)
         {
             listPerson.Add(s);
         }
-        public void writePerson(ListBox reslist)
+        public void WritePerson(ListBox reslist)
         {
 
             if (listPerson.Count > 0)
@@ -82,12 +82,12 @@ namespace AF_SearchHotel
             freeBreakfast = hotel.freeBreakfast;
             parking = hotel.parking;
         }
-        
 
-        public override void Write(ListBox resListBox)
+
+        public override void Write(ListBox resListBox, PictureBox pictureBox)
         {
             resListBox.Items.Add("Type: " + camperOrHotel);
-            base.Write(resListBox);
+            base.Write(resListBox, pictureBox);
             resListBox.Items.Add("which floor: " + floor);
             resListBox.Items.Add("Rooms: " + countRoom);
             resListBox.Items.Add("Rate: " + rate);
@@ -96,7 +96,7 @@ namespace AF_SearchHotel
             resListBox.Items.Add("Parking: " + parking);
         }
 
-        public void recommendationsForRoomBaseMoney()
+        public void RecommendationsForRoomBaseMoney()
         {
             MessageBox.Show("If 0-100$: floor -- 10-12, 1 room, not have balcon, not have wi-fi and not have parking" +
                 "\n_______________________________________________________________________________________" +
@@ -109,7 +109,7 @@ namespace AF_SearchHotel
                 "\nIf 700$ - 100000000$: floor -- 1-3, 1-3 room, have balcon, have wi-fi and have parking");
         }
 
-        public void additionalServices()
+        public void AdditionalServices()
         {
             MessageBox.Show("Additional Services which can be used inside the hotel." +
                 "\nrepair of clothes and shoes, laundry and dry cleaning;" +

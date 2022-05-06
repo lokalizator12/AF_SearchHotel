@@ -24,6 +24,7 @@ namespace AF_SearchHotel
                     Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value), checkBox4.Checked, Convert.ToChar(maskedTextBox1.Text), Convert.ToInt16(numericUpDown1.Value),
                     checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, dateTimePicker1.Value, dateTimePicker2.Value, bmp);
                 campers.Add(camper);
+                Searchin.list12.Add(camper);//////
                 button5.Enabled = true;
 
             }
@@ -66,7 +67,7 @@ namespace AF_SearchHotel
         {
             if (campers.Count > 0)
             {
-                campers[campers.Count - 1].Write(listBox1);
+                campers[campers.Count - 1].Write(listBox1, pictureBox1);
                 pictureBox1.Visible = true;
                 pictureBox1.Image = bmp;
             }
@@ -75,14 +76,14 @@ namespace AF_SearchHotel
         private void button4_Click(object sender, EventArgs e)
         {
             camper = new Camper();
-            camper.infoTypeCamper();
+            camper.InfoTypeCamper();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             try
             {
-                campers[campers.Count - 1].recommendationsForTypeCamper();
+                campers[campers.Count - 1].RecommendationsForTypeCamper();
             }
             catch (Exception d)
             {
@@ -90,10 +91,7 @@ namespace AF_SearchHotel
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -103,7 +101,7 @@ namespace AF_SearchHotel
                 BackgroundImage = bitmap;
             }
         }
-        private void fullEnter()
+        private void FullEnter()
         {
             textBox1.Text = "USA";
             textBox2.Text = "New York";
@@ -121,7 +119,7 @@ namespace AF_SearchHotel
 
         private void button7_Click(object sender, EventArgs e)
         {
-            fullEnter();
+            FullEnter();
         }
 
         private void button9_Click(object sender, EventArgs e)

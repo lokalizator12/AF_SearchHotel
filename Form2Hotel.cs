@@ -16,29 +16,26 @@ namespace AF_SearchHotel
             InitializeComponent();
         }
 
-        private void Form2Hotel_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
-        {   
+        {
             Hotel searchHotel = new Hotel(textBox1.Text, textBox2.Text, Convert.ToDouble(numericUpDown8.Value), Convert.ToDouble(numericUpDown7.Value), Convert.ToInt32(numericUpDown6.Value), Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value),
                 checkBox5.Checked, Convert.ToInt16(numericUpDown1.Value), Convert.ToInt16(numericUpDown2.Value), Convert.ToDouble(numericUpDown2.Value), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, dateTimePicker1.Value, dateTimePicker2.Value, bitmap);
             hotelList.Add(searchHotel);
+            Searchin.list12.Add(searchHotel);//////////////
             button5.Enabled = true;
+
             if (numericUpDown4.Value > 1)
             {
                 buttonListPerson.Visible = true;
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                hotelList[hotelList.Count - 1].Write(listBox1);
+                hotelList[hotelList.Count - 1].Write(listBox1, pictureBox1);
                 pictureBox1.Visible = true;
                 pictureBox1.Image = bitmap;
 
@@ -84,12 +81,12 @@ namespace AF_SearchHotel
 
         private void button4_Click(object sender, EventArgs e)
         {
-            anonimHotel.additionalServices();
+            anonimHotel.AdditionalServices();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            anonimHotel.recommendationsForRoomBaseMoney();
+            anonimHotel.RecommendationsForRoomBaseMoney();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -98,11 +95,10 @@ namespace AF_SearchHotel
             {
                 Bitmap bitmap = new Bitmap(openFileDialog1.FileName);
                 BackgroundImage = bitmap;
-                
             }
         }
 
-        
+
 
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
         {
@@ -115,14 +111,9 @@ namespace AF_SearchHotel
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
-            anonimHotel.addPerson(textBox3.Text);
+            anonimHotel.AddPerson(textBox3.Text);
             textBox3.Clear();
             if (anonimHotel.listPerson.Count == numericUpDown4.Value)
             {
@@ -173,12 +164,12 @@ namespace AF_SearchHotel
 
         private void button9_Click(object sender, EventArgs e)
         {
-            anonimHotel.writePerson(listBox1);
+            anonimHotel.WritePerson(listBox1);
         }
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-            
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 bitmap = new Bitmap(openFileDialog1.FileName);
@@ -187,9 +178,6 @@ namespace AF_SearchHotel
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

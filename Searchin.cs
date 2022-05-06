@@ -6,9 +6,9 @@ using System.Windows.Forms;
 namespace AF_SearchHotel
 {
 
-    public class Searchin
+    public abstract class Searchin
     {
-        public List<Searchin> list1 = new List<Searchin>();
+        public static List<Searchin> list12 = new List<Searchin>();/////////////
 
         protected string country, city, camperOrHotel, price;
         protected double moneyOf, moneyIn;
@@ -31,13 +31,13 @@ namespace AF_SearchHotel
             countDay = 777;
             moneyOf = 777.777f;
             moneyIn = 7777.7777f;
-            price = totalPrice(moneyIn, moneyOf);
+            price = TotalPrice(moneyIn, moneyOf);
             countPerson = 10;
             countStarType = 5;
             onlinePayment = false;
             dateOf = DateTime.Now;
             dateIn = DateTime.Now;
-            
+
 
         }
 
@@ -54,7 +54,7 @@ namespace AF_SearchHotel
             this.countDay = countDay;
             this.countPerson = countPerson;
             this.countStarType = countStarType;
-            price = totalPrice(moneyOf, moneyIn);
+            price = TotalPrice(moneyOf, moneyIn);
             this.onlinePayment = onlinePayment;
             this.jmage = jmage;
         }
@@ -74,7 +74,7 @@ namespace AF_SearchHotel
             moneyOf = search.moneyOf;
             moneyIn = search.moneyIn;
             countDay = search.countDay;
-            price = totalPrice(search.moneyOf, search.moneyIn);
+            price = TotalPrice(search.moneyOf, search.moneyIn);
             countPerson = search.countPerson;
             countStarType = search.countStarType;
             onlinePayment = search.onlinePayment;
@@ -82,7 +82,7 @@ namespace AF_SearchHotel
             dateIn = search.dateIn;
         }
 
-        public virtual void Write(ListBox resList)
+        public virtual void Write(ListBox resList, PictureBox picturBox)
         {
             resList.Items.Add("Country: " + country);
             resList.Items.Add("City: " + city);
@@ -91,11 +91,12 @@ namespace AF_SearchHotel
             resList.Items.Add("Price: " + price.ToString());
             resList.Items.Add("Period: " + dateOf.ToString() + " - " + dateIn.ToString());
             IsOnlinePayment(resList);
+            picturBox.Image = jmage;
         }
 
 
 
-        protected String totalPrice(double moneyOf, double moneyIn)
+        protected String TotalPrice(double moneyOf, double moneyIn)
         {
             return Convert.ToString(moneyOf) + " - " + Convert.ToString(moneyIn);
         }

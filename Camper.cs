@@ -27,7 +27,7 @@ namespace AF_SearchHotel
 
         //constructor with all arguments
         public Camper(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
-            char typeCamper, int countSleepNumber, bool haveShower, bool haveKitchen, bool haveRoomForPersonCar, DateTime dateOf, DateTime dateIn, Bitmap jmage )
+            char typeCamper, int countSleepNumber, bool haveShower, bool haveKitchen, bool haveRoomForPersonCar, DateTime dateOf, DateTime dateIn, Bitmap jmage)
             : base(country, city, moneyOf, moneyIn, countDay, countPerson, countStarType, onlinePayment, dateOf, dateIn, jmage)
         {
             camperOrHotel = "Camper";
@@ -56,10 +56,10 @@ namespace AF_SearchHotel
         }
 
 
-        public override void Write(ListBox resListCamper)
+        public override void Write(ListBox resListCamper, PictureBox pictureBox)
         {
             resListCamper.Items.Add("Search: " + camperOrHotel);
-            base.Write(resListCamper);
+            base.Write(resListCamper, pictureBox);
             resListCamper.Items.Add("Type camper: " + typeCamper);
             resListCamper.Items.Add("Number of sleeping places: " + countSleepNumber);
             resListCamper.Items.Add("Have shower? : " + haveShower);
@@ -67,7 +67,7 @@ namespace AF_SearchHotel
             resListCamper.Items.Add("Have place for personality car? : " + haveRoomForPersonCar);
         }
 
-        public void recommendationsForTypeCamper()
+        public void RecommendationsForTypeCamper()
         {
             if (countSleepNumber <= 2 && !haveShower && !haveKitchen && !haveRoomForPersonCar)
             {
@@ -88,7 +88,7 @@ namespace AF_SearchHotel
             else { MessageBox.Show("Please choose parametrs"); }
         }
 
-        public void infoTypeCamper()
+        public void InfoTypeCamper()
         {
             MessageBox.Show("Type A: Small Camper. " +
                  "\nAll amenities and features have been designed to require as little space as possible," +

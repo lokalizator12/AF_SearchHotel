@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
@@ -16,33 +10,41 @@ namespace AF_SearchHotel
         public Form1()
         {
             InitializeComponent();
+
         }
 
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-            createSearch();
+
             Form formCamper = new Form3Camper();
             formCamper.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            createSearch();
+
             Form formHotel = new Form2Hotel();
             formHotel.ShowDialog();
         }
 
-        private void createSearch()
+
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            Searchin search1 = new Searchin(); 
-            
+
+            ArraysSearchin arraysSearchin = new ArraysSearchin();
+            arraysSearchin.ShowDialog();
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
+            if (Searchin.list12.Count > 0)
+            {
+                button3.Enabled = true;
+            }
         }
     }
 }
