@@ -9,16 +9,30 @@ namespace AF_SearchHotel
         {
             InitializeComponent();
         }
-        int s = 0;
+        private int s = 0;
         private void button1_Click(object sender, EventArgs e)
         {
 
             listBox1.Items.Clear();
-            Searchin.list12[s].Write(listBox1, pictureBox1);
-            s--;
-            if (Searchin.list12.Count > 0)
+
+            if (s == 0)
             {
-                button1.Enabled = true;
+                button1.Enabled = false;
+
+            }
+            else
+            {
+                Searchin.list12[s].Write(listBox1, pictureBox1);
+                s--;
+                if (Searchin.list12.Count > 1)
+                {
+                    button1.Enabled = true;
+
+                }
+                if (Searchin.list12.Count > 0)
+                {
+                    button2.Enabled = true;
+                }
 
             }
         }
@@ -31,12 +45,14 @@ namespace AF_SearchHotel
             if (Searchin.list12.Count == s)
             {
                 button2.Enabled = false;
+                s--;
             }
             if (Searchin.list12.Count > 0)
             {
                 button1.Enabled = true;
 
             }
+
 
         }
     }

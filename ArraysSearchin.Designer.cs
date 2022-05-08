@@ -37,38 +37,40 @@
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(60, 29);
+            this.listBox1.Location = new System.Drawing.Point(18, 96);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(408, 303);
+            this.listBox1.Size = new System.Drawing.Size(298, 303);
             this.listBox1.TabIndex = 0;
+            this.listBox1.TabStop = false;
             // 
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(96, 369);
+            this.button1.Location = new System.Drawing.Point(41, 23);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.Size = new System.Drawing.Size(88, 40);
+            this.button1.TabIndex = 2;
             this.button1.Text = "prev";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(334, 369);
+            this.button2.Location = new System.Drawing.Point(225, 23);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
+            this.button2.Size = new System.Drawing.Size(91, 40);
+            this.button2.TabIndex = 1;
             this.button2.Text = "next";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(500, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(41, 419);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(169, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(241, 104);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -76,12 +78,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 432);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(344, 545);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Name = "ArraysSearchin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ArraysSearchin";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

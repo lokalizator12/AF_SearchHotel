@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -12,7 +11,6 @@ namespace AF_SearchHotel
             InitializeComponent();
         }
 
-        List<Camper> campers = new List<Camper>();
         Camper camper;
         Bitmap bmp;
 
@@ -23,8 +21,8 @@ namespace AF_SearchHotel
                 camper = new Camper(textBox1.Text, textBox2.Text, Convert.ToDouble(numericUpDown6.Value), Convert.ToDouble(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value),
                     Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value), checkBox4.Checked, Convert.ToChar(maskedTextBox1.Text), Convert.ToInt16(numericUpDown1.Value),
                     checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, dateTimePicker1.Value, dateTimePicker2.Value, bmp);
-                campers.Add(camper);
                 Searchin.list12.Add(camper);//////
+                Camper.CampersList.Add(camper);
                 button5.Enabled = true;
 
             }
@@ -36,6 +34,7 @@ namespace AF_SearchHotel
 
         private void cleaning()
         {
+            pictureBox1.Visible = false;
             maskedTextBox1 = null;
             textBox2.Clear();
             textBox1.Clear();
@@ -52,9 +51,9 @@ namespace AF_SearchHotel
             checkBox3.Checked = false;
             checkBox4.Checked = false;
             listBox1.Items.Clear();
-            if (campers.Count > 0)
+            if (Camper.CampersList.Count > 0)
             {
-                campers[campers.Count - 1] = null;
+                Camper.CampersList[Camper.CampersList.Count - 1] = null;
             }
         }
 
@@ -65,9 +64,9 @@ namespace AF_SearchHotel
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (campers.Count > 0)
+            if (Camper.CampersList.Count > 0)
             {
-                campers[campers.Count - 1].Write(listBox1, pictureBox1);
+                Camper.CampersList[Camper.CampersList.Count - 1].Write(listBox1, pictureBox1);
                 pictureBox1.Visible = true;
                 pictureBox1.Image = bmp;
             }
@@ -83,7 +82,7 @@ namespace AF_SearchHotel
         {
             try
             {
-                campers[campers.Count - 1].RecommendationsForTypeCamper();
+                Camper.CampersList[Camper.CampersList.Count - 1].RecommendationsForTypeCamper();
             }
             catch (Exception d)
             {
@@ -130,5 +129,7 @@ namespace AF_SearchHotel
                 bmp = new Bitmap(openFileDialog1.FileName);
             }
         }
+
+
     }
 }

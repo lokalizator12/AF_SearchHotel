@@ -82,7 +82,7 @@
             this.maskedTextBox1.Mask = "A";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(31, 22);
-            this.maskedTextBox1.TabIndex = 0;
+            this.maskedTextBox1.TabIndex = 14;
             // 
             // numericUpDown1
             // 
@@ -96,7 +96,7 @@
             0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(49, 22);
-            this.numericUpDown1.TabIndex = 1;
+            this.numericUpDown1.TabIndex = 10;
             // 
             // checkBox1
             // 
@@ -105,7 +105,7 @@
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(65, 20);
-            this.checkBox1.TabIndex = 2;
+            this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "Shower";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(66, 20);
-            this.checkBox2.TabIndex = 3;
+            this.checkBox2.TabIndex = 12;
             this.checkBox2.Text = "Kitchen";
             this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(91, 20);
-            this.checkBox3.TabIndex = 4;
+            this.checkBox3.TabIndex = 12;
             this.checkBox3.Text = "Place for car";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
@@ -163,6 +163,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(274, 244);
             this.listBox1.TabIndex = 7;
+            this.listBox1.TabStop = false;
             // 
             // button1
             // 
@@ -171,7 +172,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(184, 65);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 18;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -183,7 +184,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(66, 26);
-            this.button2.TabIndex = 9;
+            this.button2.TabIndex = 20;
             this.button2.Text = "clear all";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -195,7 +196,7 @@
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 28);
-            this.button3.TabIndex = 10;
+            this.button3.TabIndex = 19;
             this.button3.Text = "check info";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -206,7 +207,7 @@
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(149, 28);
-            this.button4.TabIndex = 11;
+            this.button4.TabIndex = 15;
             this.button4.Text = "Info of type campers";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -235,7 +236,7 @@
             0});
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(61, 22);
-            this.numericUpDown5.TabIndex = 39;
+            this.numericUpDown5.TabIndex = 9;
             // 
             // numericUpDown4
             // 
@@ -249,7 +250,7 @@
             0});
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(61, 22);
-            this.numericUpDown4.TabIndex = 38;
+            this.numericUpDown4.TabIndex = 8;
             // 
             // numericUpDown3
             // 
@@ -263,7 +264,7 @@
             0});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(61, 22);
-            this.numericUpDown3.TabIndex = 37;
+            this.numericUpDown3.TabIndex = 7;
             // 
             // numericUpDown2
             // 
@@ -277,7 +278,7 @@
             0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(58, 22);
-            this.numericUpDown2.TabIndex = 36;
+            this.numericUpDown2.TabIndex = 6;
             // 
             // numericUpDown6
             // 
@@ -291,7 +292,7 @@
             0});
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(61, 22);
-            this.numericUpDown6.TabIndex = 35;
+            this.numericUpDown6.TabIndex = 5;
             // 
             // checkBox4
             // 
@@ -301,7 +302,7 @@
             this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(106, 20);
-            this.checkBox4.TabIndex = 34;
+            this.checkBox4.TabIndex = 11;
             this.checkBox4.Text = "Payment online";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
@@ -382,7 +383,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(142, 22);
-            this.textBox1.TabIndex = 26;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
@@ -391,7 +392,7 @@
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(142, 22);
-            this.textBox2.TabIndex = 25;
+            this.textBox2.TabIndex = 2;
             // 
             // dateTimePicker2
             // 
@@ -402,7 +403,7 @@
             this.dateTimePicker2.MinDate = new System.DateTime(2022, 4, 24, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(103, 22);
-            this.dateTimePicker2.TabIndex = 45;
+            this.dateTimePicker2.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -410,7 +411,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(123, 73);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(103, 22);
-            this.dateTimePicker1.TabIndex = 44;
+            this.dateTimePicker1.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -421,7 +422,6 @@
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
-            
             // 
             // label10
             // 
@@ -450,7 +450,7 @@
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 41);
-            this.button6.TabIndex = 49;
+            this.button6.TabIndex = 17;
             this.button6.Text = "choose background";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -464,7 +464,7 @@
             this.button7.Location = new System.Drawing.Point(310, 564);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(39, 25);
-            this.button7.TabIndex = 50;
+            this.button7.TabIndex = 0;
             this.button7.Text = "full";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -474,7 +474,7 @@
             this.button9.Location = new System.Drawing.Point(255, 117);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(79, 20);
-            this.button9.TabIndex = 54;
+            this.button9.TabIndex = 16;
             this.button9.Text = "load picture";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);

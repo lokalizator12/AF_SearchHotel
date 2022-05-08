@@ -8,7 +8,7 @@ namespace AF_SearchHotel
     public partial class Form2Hotel : Form
     {
 
-        List<Hotel> hotelList = new List<Hotel>();
+        //List<Hotel> hotelList = new List<Hotel>();
         Hotel anonimHotel = new Hotel();
         Bitmap bitmap;
         public Form2Hotel()
@@ -21,9 +21,10 @@ namespace AF_SearchHotel
         {
             Hotel searchHotel = new Hotel(textBox1.Text, textBox2.Text, Convert.ToDouble(numericUpDown8.Value), Convert.ToDouble(numericUpDown7.Value), Convert.ToInt32(numericUpDown6.Value), Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value),
                 checkBox5.Checked, Convert.ToInt16(numericUpDown1.Value), Convert.ToInt16(numericUpDown2.Value), Convert.ToDouble(numericUpDown2.Value), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, dateTimePicker1.Value, dateTimePicker2.Value, bitmap);
-            hotelList.Add(searchHotel);
+           
             Searchin.list12.Add(searchHotel);//////////////
             button5.Enabled = true;
+            Hotel.HotelList.Add(searchHotel);
 
             if (numericUpDown4.Value > 1)
             {
@@ -35,7 +36,7 @@ namespace AF_SearchHotel
         {
             try
             {
-                hotelList[hotelList.Count - 1].Write(listBox1, pictureBox1);
+                Hotel.HotelList[Hotel.HotelList.Count - 1].Write(listBox1, pictureBox1);
                 pictureBox1.Visible = true;
                 pictureBox1.Image = bitmap;
 
@@ -52,7 +53,7 @@ namespace AF_SearchHotel
 
         private void cleaning()
         {
-            pictureBox1.Image.Dispose();
+            pictureBox1.Visible = false;
             checkBox4.Checked = false;
             checkBox3.Checked = false;
             checkBox2.Checked = false;
@@ -73,9 +74,9 @@ namespace AF_SearchHotel
             textBox1.Clear();
             textBox2.Clear();
             listBox1.Items.Clear();
-            if (hotelList.Count > 0)
+            if (Hotel.HotelList.Count > 0)
             {
-                hotelList[hotelList.Count - 1] = null;
+                Hotel.HotelList[Hotel.HotelList.Count - 1] = null;
             }
         }
 
@@ -127,7 +128,7 @@ namespace AF_SearchHotel
 
         private void numericUpDown6_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDown5.Value > 0 || numericUpDown2.Value > 0 || numericUpDown3.Value > 0 || numericUpDown6.Value > 0 || numericUpDown7.Value > 0 || numericUpDown8.Value > 0)
+            if (numericUpDown5.Value != 0 || numericUpDown2.Value > 0 || numericUpDown3.Value > 0 || numericUpDown6.Value > 0 || numericUpDown7.Value > 0 || numericUpDown8.Value > 0)
             {
                 textBox3.Enabled = false;
                 textBox3.Visible = false;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace AF_SearchHotel
         private readonly bool haveRoomForPersonCar;
 
 
+        public static List<Camper> CampersList = new List<Camper>();
         // counstructor nit arguments
         public Camper() : base()
         {

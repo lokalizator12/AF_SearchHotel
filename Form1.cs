@@ -41,10 +41,24 @@ namespace AF_SearchHotel
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (Searchin.list12.Count > 0)
+            if (Searchin.list12.Count > 0) button3.Enabled = true;
+            if (Hotel.HotelList.Count > 0 || Camper.CampersList.Count > 0)
             {
-                button3.Enabled = true;
+                button5.Enabled = true;
             }
+
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Count formCount = new Count();
+            formCount.ShowDialog();
         }
     }
 }

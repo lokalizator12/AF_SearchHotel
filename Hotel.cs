@@ -19,8 +19,9 @@ namespace AF_SearchHotel
         Bitmap jmage;
 
 
+        public static List<Hotel> HotelList = new List<Hotel>();
 
-        public List<String> listPerson = new List<String>();
+        public  List<String> listPerson = new List<String>();
         public void AddPerson(string s)
         {
             listPerson.Add(s);
