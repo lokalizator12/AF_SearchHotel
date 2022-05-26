@@ -1,22 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
 {
     internal class Camper : Searchin
     {
-        readonly string camperOrHotel;
-        readonly char typeCamper;
-        readonly int countSleepNumber;
+        string camperOrHotel;
+        char typeCamper;
+        int countSleepNumber;
         private bool haveShower;
         private bool haveKitchen;
-        private readonly bool haveRoomForPersonCar;
+        private  bool haveRoomForPersonCar;
 
 
         public static List<Camper> CampersList = new List<Camper>();
         // counstructor nit arguments
+        public Camper(StreamReader reader) : base(reader) { CampersList.Add(this); }
+
+        public override void ReadInfo(StreamReader streamReader)
+        {
+            typeCamper = Convert.ToChar(streamReader.ReadLine());
+            countSleepNumber = Convert.ToInt32(streamReader.ReadLine());
+            if (streamReader.ReadLine().Equals("True")) { haveShower = true; } else { haveShower = false; }
+            if (streamReader.ReadLine().Equals("True")) { haveRoomForPersonCar = true; } else { haveRoomForPersonCar = false; }
+            if (streamReader.ReadLine().Equals("True")) { haveKitchen = true; } else { haveKitchen = false; }
+            base.ReadInfo(streamReader);
+
+        }
+        public override void WriteInfo(StreamWriter streamWriter)
+        {
+            streamWriter.WriteLine("Camper");
+            streamWriter.WriteLine( typeCamper);
+            streamWriter.WriteLine( countSleepNumber);
+            streamWriter.WriteLine( haveShower);
+            streamWriter.WriteLine(haveRoomForPersonCar);
+            streamWriter.WriteLine( haveKitchen);
+            base.WriteInfo(streamWriter);
+
+        }
         public Camper() : base()
         {
             camperOrHotel = "camper, but i dont know, maybe hotel";

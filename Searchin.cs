@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
@@ -37,14 +39,61 @@ namespace AF_SearchHotel
             onlinePayment = false;
             dateOf = DateTime.Now;
             dateIn = DateTime.Now;
+        }
 
+        public Searchin(StreamReader reader)
+        {
+            ReadInfo(reader);
+            list12.Add(this);
+        }
+        public virtual void WriteInfo(StreamWriter writer)
+        {
+            writer.WriteLine(country);
+            writer.WriteLine(city);
+            writer.WriteLine(countDay);
+            writer.WriteLine(moneyOf);
+            writer.WriteLine(moneyIn);
+            writer.WriteLine(countPerson);
+            writer.WriteLine(countStarType);
+            writer.WriteLine(price);
+            writer.WriteLine( onlinePayment);
+            
+            using (MemoryStream ms = new MemoryStream())
+            {
+                jmage.Save(ms, ImageFormat.Bmp);
+                byte[] bytes = ms.ToArray();
+                writer.WriteLine(Convert.ToBase64String(bytes, 0, bytes.Length));
+            }
+            
 
         }
+
+        public virtual void ReadInfo(StreamReader streamReader)
+        {
+            
+            country = streamReader.ReadLine();
+            city = streamReader.ReadLine();
+            countDay = Convert.ToInt32(streamReader.ReadLine());
+            moneyOf = Convert.ToDouble(streamReader.ReadLine());
+            moneyIn = Convert.ToDouble(streamReader.ReadLine());
+            countPerson = Convert.ToInt32(streamReader.ReadLine());
+            countStarType = Convert.ToInt32(streamReader.ReadLine());
+            price = streamReader.ReadLine();
+            if (streamReader.ReadLine().Equals("True")){onlinePayment = true;}else{onlinePayment = false;}
+            
+            byte[] bytes = Convert.FromBase64String(streamReader.ReadLine());
+            using (MemoryStream ms = new MemoryStream(bytes))
+            jmage = new Bitmap(ms);
+           
+        }
+
+       
 
 
         //constructor with all arguments
         public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment, DateTime dateOf, DateTime dateIn, Bitmap jmage)
         {
+            
             this.dateOf = dateOf;
             this.dateIn = dateIn;
             this.country = country;

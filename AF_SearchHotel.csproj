@@ -52,11 +52,11 @@
     <Compile Include="ArraysSearchin.Designer.cs">
       <DependentUpon>ArraysSearchin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Count.cs">
+    <Compile Include="operation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Count.Designer.cs">
-      <DependentUpon>Count.cs</DependentUpon>
+    <Compile Include="operation.Designer.cs">
+      <DependentUpon>operation.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -85,8 +85,8 @@
     <EmbeddedResource Include="ArraysSearchin.resx">
       <DependentUpon>ArraysSearchin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Count.resx">
-      <DependentUpon>Count.cs</DependentUpon>
+    <EmbeddedResource Include="operation.resx">
+      <DependentUpon>operation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

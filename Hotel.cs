@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AF_SearchHotel
@@ -11,12 +12,12 @@ namespace AF_SearchHotel
         string camperOrHotel;
         private int floor;
         private int countRoom;
-        private readonly double rate;
+        private double rate;
         private bool haveBalcony;
         private bool haveWiFi;
         private bool freeBreakfast;
-        private readonly bool parking;
-        Bitmap jmage;
+        private bool parking;
+        
 
 
         public static List<Hotel> HotelList = new List<Hotel>();
@@ -49,7 +50,32 @@ namespace AF_SearchHotel
             countRoom = 0;
 
         }
+        public override void ReadInfo(StreamReader streamReader)
+        {
+            
+            floor = Convert.ToInt32(streamReader.ReadLine());
+            countRoom = Convert.ToInt32(streamReader.ReadLine());
+            rate = Convert.ToDouble(streamReader.ReadLine());
+            if (streamReader.ReadLine().Equals("True")) { haveBalcony = true; } else { haveBalcony = false; }
+            if (streamReader.ReadLine().Equals("True")) { freeBreakfast = true; } else { freeBreakfast = false; }
+            if ( streamReader.ReadLine().Equals("True")) { parking = true; } else { parking = false; }
+            if (streamReader.ReadLine().Equals("True")) { haveWiFi = true; } else { haveWiFi = false; }
+            base.ReadInfo(streamReader);
 
+        }
+
+        public override void WriteInfo(StreamWriter streamWriter)
+        {
+            streamWriter.WriteLine("Hotel");
+            streamWriter.WriteLine(floor);
+            streamWriter.WriteLine(countRoom);
+            streamWriter.WriteLine(rate);
+            streamWriter.WriteLine( haveBalcony);
+            streamWriter.WriteLine(freeBreakfast);
+            streamWriter.WriteLine( parking);
+            streamWriter.WriteLine(haveWiFi);
+            base.WriteInfo(streamWriter);
+        }
         //constructor with all arguments
         public Hotel(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment,
             int floor, int countRoom, double rate, bool haveBalcony, bool haveWiFi, bool freeBreakfast, bool parking, DateTime dateOf, DateTime dateIn, Bitmap jmage)
@@ -64,13 +90,33 @@ namespace AF_SearchHotel
             this.freeBreakfast = freeBreakfast;
             this.parking = parking;
         }
-
+        public Hotel(StreamReader stream) : base(stream)
+        {
+            HotelList.Add(this);
+        }
         //distructor
         ~Hotel()
         {
 
         }
 
+        public static bool operator!=(Hotel h1, Hotel h2)
+        {
+            return (h1.dateOf != h2.dateOf);
+
+        }
+
+        public static bool operator ==(Hotel h1, Hotel h2)
+        {
+            return (h1.dateOf == h2.dateOf);
+
+        }
+
+        public static int operator+(Hotel h1, int n1)
+        {
+            return h1.countDay + HotelList[n1].countDay;
+
+        }
         //copy constructor 
         public Hotel(Hotel hotel) : base(hotel)
         {
