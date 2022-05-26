@@ -30,7 +30,7 @@ namespace AF_SearchHotel
         {
             country = "Lego-coutry";
             city = "Lego-city";
-            countDay = 777;
+            countDay = 0;
             moneyOf = 777.777f;
             moneyIn = 7777.7777f;
             price = TotalPrice(moneyIn, moneyOf);
@@ -89,7 +89,10 @@ namespace AF_SearchHotel
 
        
 
-
+        public static int operator+(Searchin s1, int x)
+        {
+            return s1.countDay ;
+        }
         //constructor with all arguments
         public Searchin(string country, string city, double moneyOf, double moneyIn, int countDay, int countPerson, int countStarType, bool onlinePayment, DateTime dateOf, DateTime dateIn, Bitmap jmage)
         {
