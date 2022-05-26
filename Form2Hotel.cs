@@ -179,6 +179,71 @@ namespace AF_SearchHotel
 
         }
 
+        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        {
 
+        }
+
+        private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+                if (e.Button == MouseButtons.Right)
+                {
+                    textBox1.Text = "Poland";
+                }
+            
+            
+        }
+
+        private void Form2Hotel_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+                if (e.Button == MouseButtons.Right)
+                {
+                BackgroundImage = Bitmap.FromFile("C:\\Users\\fatik\\Pictures\\1625492016_12-kartinkin-com-p-sinii-fon-akvarel-krasivie-foni-14.jpg");
+                }
+            
+        }
+
+        private void Form2Hotel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+            if (e.Button == MouseButtons.Right)
+            {
+                BackgroundImage = null;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (textBox1.Text.Length == 0)
+            {
+                if (e.Button == MouseButtons.Middle)
+                {
+                    textBox1.Text = "Poland";
+                }
+            }
+        }
+
+        private void textBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (textBox1.Text.Length == 0)
+            {
+                if (e.Button == MouseButtons.Middle)
+                {
+                    textBox1.Text = "Opole";
+                }
+            }
+        }
     }
 }
