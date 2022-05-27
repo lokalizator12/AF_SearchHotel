@@ -10,7 +10,6 @@ namespace AF_SearchHotel
         public Form1()
         {
             InitializeComponent();
-
         }
 
 
@@ -50,20 +49,12 @@ namespace AF_SearchHotel
 
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             operation formCount = new operation();
             formCount.ShowDialog();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

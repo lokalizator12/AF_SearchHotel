@@ -179,14 +179,10 @@ namespace AF_SearchHotel
 
         }
 
-        private void textBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
+       
 
         private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
                 if (e.Button == MouseButtons.Right)
                 {
                     textBox1.Text = "Poland";
@@ -214,21 +210,13 @@ namespace AF_SearchHotel
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
+        
 
         private void textBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (textBox1.Text.Length == 0)
             {
-                if (e.Button == MouseButtons.Middle)
+                if (e.Button == MouseButtons.Right)
                 {
                     textBox1.Text = "Poland";
                 }
@@ -237,13 +225,23 @@ namespace AF_SearchHotel
 
         private void textBox2_MouseDown(object sender, MouseEventArgs e)
         {
-            if (textBox1.Text.Length == 0)
+            if (textBox2.Text.Length == 0)
             {
-                if (e.Button == MouseButtons.Middle)
+                if (e.Button == MouseButtons.Right)
                 {
-                    textBox1.Text = "Opole";
+                    textBox2.Text = "Opole";
                 }
             }
+        }
+
+        private void listBox1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("order data window", listBox1);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

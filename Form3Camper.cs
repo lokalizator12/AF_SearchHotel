@@ -130,6 +130,31 @@ namespace AF_SearchHotel
             }
         }
 
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (textBox1.Text.Length == 0)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    textBox1.Text = "Poland";
+                }
+            }
+        }
 
+        private void textBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (textBox2.Text.Length == 0)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    textBox2.Text = "Opole";
+                }
+            }
+        }
+
+        private void listBox1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("order data window", listBox1);
+        }
     }
 }

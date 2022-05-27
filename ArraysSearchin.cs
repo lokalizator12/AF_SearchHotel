@@ -23,6 +23,7 @@ namespace AF_SearchHotel
             if (s == 0)
             {
                 button1.Enabled = false;
+                button2.Enabled = true;
 
             }
             else
@@ -62,6 +63,7 @@ namespace AF_SearchHotel
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 using (StreamWriter streamWriter = new StreamWriter(saveFileDialog1.FileName))
@@ -89,6 +91,8 @@ namespace AF_SearchHotel
                         if (header == "Hotel") new Hotel(streamReader);
                         if (header == "Camper") new Camper(streamReader);
                     }
+            button2.Enabled = true;
+            numericUpDown1.Maximum = Searchin.list12.Count - 1;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -115,8 +119,10 @@ namespace AF_SearchHotel
                 int index = (int)numericUpDown1.Value;
 
                 Searchin.list12.RemoveAt(index);
-                listBox1.Update();
-                pictureBox1.Update();
+                listBox1.Items.Clear();
+                
+
+
             }
             else
             {

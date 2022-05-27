@@ -41,7 +41,7 @@ namespace AF_SearchHotel
             dateIn = DateTime.Now;
         }
 
-        public Searchin(StreamReader reader)
+        protected Searchin(StreamReader reader)
         {
             ReadInfo(reader);
             list12.Add(this);
@@ -64,13 +64,10 @@ namespace AF_SearchHotel
                 byte[] bytes = ms.ToArray();
                 writer.WriteLine(Convert.ToBase64String(bytes, 0, bytes.Length));
             }
-            
-
         }
 
         public virtual void ReadInfo(StreamReader streamReader)
         {
-            
             country = streamReader.ReadLine();
             city = streamReader.ReadLine();
             countDay = Convert.ToInt32(streamReader.ReadLine());
@@ -80,15 +77,12 @@ namespace AF_SearchHotel
             countStarType = Convert.ToInt32(streamReader.ReadLine());
             price = streamReader.ReadLine();
             if (streamReader.ReadLine().Equals("True")){onlinePayment = true;}else{onlinePayment = false;}
-            
             byte[] bytes = Convert.FromBase64String(streamReader.ReadLine());
             using (MemoryStream ms = new MemoryStream(bytes))
             jmage = new Bitmap(ms);
-           
         }
 
        
-
         public static int operator+(Searchin s1, int x)
         {
             return s1.countDay ;
@@ -145,8 +139,6 @@ namespace AF_SearchHotel
             IsOnlinePayment(resList);
             picturBox.Image = jmage;
         }
-
-
 
         protected String TotalPrice(double moneyOf, double moneyIn)
         {

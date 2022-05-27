@@ -52,7 +52,6 @@ namespace AF_SearchHotel
         }
         public override void ReadInfo(StreamReader streamReader)
         {
-            
             floor = Convert.ToInt32(streamReader.ReadLine());
             countRoom = Convert.ToInt32(streamReader.ReadLine());
             rate = Convert.ToDouble(streamReader.ReadLine());
@@ -61,7 +60,6 @@ namespace AF_SearchHotel
             if ( streamReader.ReadLine().Equals("True")) { parking = true; } else { parking = false; }
             if (streamReader.ReadLine().Equals("True")) { haveWiFi = true; } else { haveWiFi = false; }
             base.ReadInfo(streamReader);
-
         }
 
         public override void WriteInfo(StreamWriter streamWriter)

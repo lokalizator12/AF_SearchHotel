@@ -65,17 +65,7 @@ namespace AF_SearchHotel
         {
             double sum = 0;
             Searchin s5 = new Hotel();
-           /*
-            for (int i = 0; i < Searchin.list12.Count; i+=2)
-            {   if (i >= Searchin.list12.Count - 1)
-                {
-                    sum += s5 + Searchin.list12[i];
-                    break;
-                }
-                sum += Searchin.list12[i] + Searchin.list12[i + 1];
-
-            }
-           */
+       
             foreach (Searchin s1 in Searchin.list12)
             {
                 sum += s1+0;  //s1+0 => get countDay;

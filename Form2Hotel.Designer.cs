@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.buttonListPerson = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -180,6 +182,7 @@
             this.listBox1.Size = new System.Drawing.Size(330, 260);
             this.listBox1.TabIndex = 17;
             this.listBox1.TabStop = false;
+            this.listBox1.MouseHover += new System.EventHandler(this.listBox1_MouseHover);
             // 
             // button2
             // 
@@ -425,12 +428,11 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(142, 22);
             this.textBox2.TabIndex = 2;
-            this.textBox2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDoubleClick);
             this.textBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDown);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(608, 167);
+            this.button4.Location = new System.Drawing.Point(608, 179);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(70, 48);
@@ -472,9 +474,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(476, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(439, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(228, 146);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
@@ -482,7 +484,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(402, 165);
+            this.button6.Location = new System.Drawing.Point(402, 181);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(114, 44);
             this.button6.TabIndex = 20;
@@ -560,7 +562,7 @@
             // buttonListPerson
             // 
             this.buttonListPerson.BackColor = System.Drawing.Color.MistyRose;
-            this.buttonListPerson.Location = new System.Drawing.Point(491, 209);
+            this.buttonListPerson.Location = new System.Drawing.Point(530, 208);
             this.buttonListPerson.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListPerson.Name = "buttonListPerson";
             this.buttonListPerson.Size = new System.Drawing.Size(70, 20);
@@ -695,5 +697,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button buttonListPerson;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
