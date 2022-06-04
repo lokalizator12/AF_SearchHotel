@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace AF_SearchHotel
 {
 
-    public abstract class Searchin
+    public abstract class Searchin : IComparable<Searchin>
     {
         public static List<Searchin> list12 = new List<Searchin>();/////////////
 
@@ -157,5 +157,28 @@ namespace AF_SearchHotel
             }
         }
 
+        public int CompareTo(Searchin other)
+        {
+            if (other == null)
+                return 1;
+            if(String.Compare(this.country, other.country) == 1)
+            {
+                return 1;
+            }else if(String.Compare(this.country, other.country) == -1)
+            {
+                return -1;
+            }
+            else
+            {
+                if(String.Compare(this.countDay.ToString(), other.countDay.ToString()) == 1)
+                {
+                    return 1;
+                }else if(String.Compare(this.countDay.ToString(), other.countDay.ToString()) == 0)
+                {
+                    return -1;
+                }
+            }
+            throw new NotImplementedException();
+        }
     }
 }

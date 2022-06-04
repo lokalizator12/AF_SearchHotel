@@ -123,11 +123,20 @@ namespace AF_SearchHotel
 
         private void button9_Click(object sender, EventArgs e)
         {
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                bmp = new Bitmap(openFileDialog1.FileName);
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    bmp = new Bitmap(openFileDialog1.FileName);
+                    button1.Enabled = true;
+                }
             }
+            catch (System.ArgumentException )
+            {
+
+                MessageBox.Show("this is not image");
+            }
+
         }
 
         private void textBox1_MouseDown(object sender, MouseEventArgs e)

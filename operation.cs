@@ -13,6 +13,7 @@ namespace AF_SearchHotel
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             int result = Hotel.HotelList[(int)numericUpDown2.Value] + (int)numericUpDown1.Value;
             MessageBox.Show("Total days with " + numericUpDown2.Value.ToString() + "st. and " + numericUpDown1.Value.ToString() + "st. order: " + result.ToString());
         }
@@ -33,14 +34,23 @@ namespace AF_SearchHotel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Hotel.HotelList[(int)numericUpDown2.Value] != Hotel.HotelList[(int)numericUpDown1.Value])
+            try
             {
-                MessageBox.Show("Not arrival");
+                if (Hotel.HotelList[(int)numericUpDown2.Value] != Hotel.HotelList[(int)numericUpDown1.Value])
+                {
+                    MessageBox.Show("Not arrival");
+                }
+                else if (Hotel.HotelList[(int)numericUpDown2.Value] == Hotel.HotelList[(int)numericUpDown1.Value])
+                {
+                    MessageBox.Show("Yes, compare");
+                }
             }
-            else if (Hotel.HotelList[(int)numericUpDown2.Value] == Hotel.HotelList[(int)numericUpDown1.Value])
+            catch (System.ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Yes, compare");
+
+                MessageBox.Show("Index not found");
             }
+            
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -49,15 +59,19 @@ namespace AF_SearchHotel
         }
         private void Refresh2()
         {
+            numericUpDown2.Maximum = Searchin.list12.Count;
+            numericUpDown1.Maximum = Searchin.list12.Count;
             if (numericUpDown1.Value == numericUpDown2.Value)
             {
                 button1.Enabled = false;
                 button2.Enabled = false;
+                button3.Enabled = false;
             }
             else if (numericUpDown1.Value != numericUpDown2.Value)
             {
                 button1.Enabled = true;
                 button2.Enabled = true;
+                button3.Enabled = true;
             }
         }
 

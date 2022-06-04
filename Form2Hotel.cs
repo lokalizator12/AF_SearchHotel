@@ -14,15 +14,16 @@ namespace AF_SearchHotel
         public Form2Hotel()
         {
             InitializeComponent();
+            
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
             Hotel searchHotel = new Hotel(textBox1.Text, textBox2.Text, Convert.ToDouble(numericUpDown8.Value), Convert.ToDouble(numericUpDown7.Value), Convert.ToInt32(numericUpDown6.Value), Convert.ToInt16(numericUpDown4.Value), Convert.ToInt16(numericUpDown5.Value),
-                checkBox5.Checked, Convert.ToInt16(numericUpDown1.Value), Convert.ToInt16(numericUpDown2.Value), Convert.ToDouble(numericUpDown2.Value), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, dateTimePicker1.Value, dateTimePicker2.Value, bitmap);
+            checkBox5.Checked, Convert.ToInt16(numericUpDown1.Value), Convert.ToInt16(numericUpDown2.Value), Convert.ToDouble(numericUpDown2.Value), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, dateTimePicker1.Value, dateTimePicker2.Value, bitmap);
            
-            Searchin.list12.Add(searchHotel);//////////////
+            Searchin.list12.Add(searchHotel);
             button5.Enabled = true;
             Hotel.HotelList.Add(searchHotel);
 
@@ -92,13 +93,19 @@ namespace AF_SearchHotel
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                Bitmap bitmap = new Bitmap(openFileDialog1.FileName);
-                BackgroundImage = bitmap;
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap bitmap = new Bitmap(openFileDialog1.FileName);
+                    BackgroundImage = bitmap;
+                    
+                }
+            }catch (System.ArgumentException)
+            {
+                MessageBox.Show("This is not image");
             }
         }
-
 
 
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
@@ -170,12 +177,21 @@ namespace AF_SearchHotel
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                bitmap = new Bitmap(openFileDialog1.FileName);
-                pictureBox1.Image = bitmap;
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    bitmap = new Bitmap(openFileDialog1.FileName);
+                    pictureBox1.Image = bitmap;
+                    button1.Enabled = true;
+                }
             }
+            catch (System.ArgumentException)
+            {
+
+                MessageBox.Show("this is not image");
+            }
+            
 
         }
 
@@ -239,9 +255,6 @@ namespace AF_SearchHotel
             toolTip1.Show("order data window", listBox1);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
