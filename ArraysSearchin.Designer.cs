@@ -240,6 +240,7 @@
             this.Name = "ArraysSearchin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ArraysSearchin";
+            this.Load += new System.EventHandler(this.ArraysSearchin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);

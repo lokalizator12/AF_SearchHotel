@@ -159,26 +159,46 @@ namespace AF_SearchHotel
 
         public int CompareTo(Searchin other)
         {
-            if (other == null)
-                return 1;
-            if(String.Compare(this.country, other.country) == 1)
+            try
             {
-                return 1;
-            }else if(String.Compare(this.country, other.country) == -1)
-            {
-                return -1;
-            }
-            else
-            {
-                if(String.Compare(this.countDay.ToString(), other.countDay.ToString()) == 1)
+                if (other == null)
+                    return 1;
+                if (String.Compare(this.country, other.country) == 1)
                 {
                     return 1;
-                }else if(String.Compare(this.countDay.ToString(), other.countDay.ToString()) == 0)
+                }
+                else if (String.Compare(this.country, other.country) == -1)
                 {
                     return -1;
                 }
+                else
+                {
+                    if (String.Compare(this.city, other.city) == 1)
+                    {
+                        return 1;
+                    }
+                    else if (String.Compare(this.city, other.city) == 0)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        if (String.Compare(this.countDay.ToString(), other.countDay.ToString()) == 1)
+                        {
+                            return 1;
+                        }
+                        else if (String.Compare(this.countDay.ToString(), other.countDay.ToString()) == 0)
+                        {
+                            return -1;
+                        }
+                    }
+                }
             }
-            throw new NotImplementedException();
+            catch (NotImplementedException)
+            {
+                MessageBox.Show("Not Implemented Exception");
+            }
+            return 0;
         }
     }
 }

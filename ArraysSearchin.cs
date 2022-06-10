@@ -173,5 +173,10 @@ namespace AF_SearchHotel
         {
 
         }
+
+        private void ArraysSearchin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

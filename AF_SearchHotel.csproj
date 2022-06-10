@@ -52,7 +52,6 @@
     <Compile Include="ArraysSearchin.Designer.cs">
       <DependentUpon>ArraysSearchin.cs</DependentUpon>
     </Compile>
-    <Compile Include="IComparable.cs" />
     <Compile Include="operation.cs">
       <SubType>Form</SubType>
     </Compile>
